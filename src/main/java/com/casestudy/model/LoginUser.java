@@ -96,6 +96,7 @@ public class LoginUser {
     public void setEmail(String email) {
         this.email = email;
     }
+    //fix
 
     public String getAddress() {
         return address;
