@@ -1,5 +1,6 @@
 package com.casestudy.model;
 
+import jdk.jfr.Category;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
