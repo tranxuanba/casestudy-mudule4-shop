@@ -1,7 +1,8 @@
 package com.casestudy.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class LoginUser {
@@ -17,8 +18,11 @@ public class LoginUser {
     private String email;
     private String address;
     private boolean disable = false;
+
+
     public LoginUser() {
     }
+
     public LoginUser(Long id, String username, String password, String name, Long age, String email, String address, boolean disable, UserRole userRole) {
         this.id = id;
         this.username = username;
@@ -30,14 +34,20 @@ public class LoginUser {
         this.disable = disable;
         this.userRole = userRole;
     }
+
+
     @ManyToOne
     private UserRole userRole;
+
     public UserRole getUserRole() {
         return userRole;
     }
+
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
     }
+
+
 
     public Long getId() {
         return id;
@@ -86,6 +96,7 @@ public class LoginUser {
     public void setEmail(String email) {
         this.email = email;
     }
+    //fix
 
     public String getAddress() {
         return address;
