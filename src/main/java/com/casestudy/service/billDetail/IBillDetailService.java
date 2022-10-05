@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.casestudy.service.billDetail;
 
 import com.casestudy.model.Bill;
@@ -14,5 +14,4 @@ public interface IBillDetailService extends IService<BillDetail> {
 
     Double calculateMoneyByBillId(Long billId);
 }
-=======
->>>>>>> hiep
+
