@@ -4,6 +4,7 @@ import com.casestudy.model.*;
 import com.casestudy.service.admin.IAdminService;
 import com.casestudy.service.appuser.AppUserService;
 import com.casestudy.service.bill.IBillService;
+import com.casestudy.service.billDetail.IBillDetailService;
 import com.casestudy.service.category.ICategoryService;
 import com.casestudy.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
