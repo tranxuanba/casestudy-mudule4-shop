@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -21,6 +22,7 @@ public class AdminController {
     private UserRoleService userRoleService;
     @Autowired
     private ILoginUserService loginUserService;
+
     @ModelAttribute("userRoles")
     public Iterable<UserRole> userRoles() {
         return userRoleService.findALl();
@@ -46,6 +48,7 @@ public class AdminController {
         modelAndView.addObject("admin", adminService.findAll(pageable));
         return modelAndView;
     }
+
     @PostMapping("/search")
     public ModelAndView searchByName(@ModelAttribute UserRole userRole, @PageableDefault(size = 7) Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("admin/adminList");
@@ -64,6 +67,5 @@ public class AdminController {
         loginUserService.save(loginUser);
         return new ResponseEntity<>(loginUser, HttpStatus.OK);
     }
-
 
 }
