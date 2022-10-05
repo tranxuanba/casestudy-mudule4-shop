@@ -22,18 +22,26 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Override
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         String targetUrl = determineTargetUrl(authentication);
+
         if (response.isCommitted()) {
-            System.out.println("khong the chuyen huong");
+            System.out.println("Can't redirect");
             return;
         }
+
         redirectStrategy.sendRedirect(request, response, targetUrl);
     }
-    //vai tro nguoi dang nhap va tra ve
-    //tra ve url theo vai tro
+
+    /*
+     * Vai trò của người đăng nhập và return lại
+     * trả lại URL theo vai trò
+     */
     protected String determineTargetUrl(Authentication authentication) {
         String url = "";
+
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
         List<String> roles = new ArrayList<String>();
+
         for (GrantedAuthority a : authorities) {
             roles.add(a.getAuthority());
         }
@@ -41,35 +49,43 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
             url = "/dashboard";
         } else if (isUser(roles)) {
             url = "/users";
+
         } else if (isShop(roles)) {
             url = "/dashboard";
-        }else {
+
+        } else {
             url = "/khongcoquyen";
         }
+
         return url;
     }
-    private boolean isAdmin(List<String> roles){
-        if (roles.contains("ROLE_ADMIN")){
+
+    private boolean isUser(List<String> roles) {
+        if (roles.contains("ROLE_USER")) {
             return true;
         }
         return false;
     }
-    private boolean isUser(List<String> roles){
-        if (roles.contains("ROLE_USER")){
+
+    private boolean isAdmin(List<String> roles) {
+        if (roles.contains("ROLE_ADMIN")) {
             return true;
         }
         return false;
     }
-    private boolean isShop(List<String> roles){
-        if (roles.contains("ROLE_SHOP")){
+
+    private boolean isShop(List<String> roles) {
+        if (roles.contains("ROLE_SHOP")) {
             return true;
         }
         return false;
     }
+
     protected RedirectStrategy getRedirectStrategy() {
         return redirectStrategy;
     }
-    public void setRedirectStrategy(RedirectStrategy redirectStrategy){
+
+    public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
         this.redirectStrategy = redirectStrategy;
     }
 }
