@@ -1,0 +1,35 @@
+package com.casestudy.controllers;
+
+import com.casestudy.model.LoginUser;
+import com.casestudy.service.appuser.IAppUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+@RestController
+@RequestMapping("/statistical")
+public class StatisticalController {
+    @Autowired
+    private StatisticalService statisticalService;
+
+    @Autowired
+    private IAppUserService appUserService;
+
+    @ModelAttribute("currentUser")
+    private LoginUser user(){
+        return appUserService.getCurrentUser();
+    }
+
+    @ModelAttribute("currentShop")
+
+    @GetMapping("/month")
+    public ModelAndView showFormStatistical() {
+        ModelAndView modelAndView = new ModelAndView("shop/statistical/month");
+        return modelAndView;
+    }
+    @GetMapping("/getMonth")
+    public ModelAndView findTotalByMonth(@RequestParam Integer month){
+        Long result = statisticalService.getDataByMonth(month,appUserService.getCurrentUser().getId());
+        return new ModelAndView("shop/statistical/month","totalByMonth",result);
+    }
+}
