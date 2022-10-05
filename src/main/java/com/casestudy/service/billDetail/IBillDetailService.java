@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> hiep
 package com.casestudy.service.billDetail;
 
 import com.casestudy.model.Bill;
