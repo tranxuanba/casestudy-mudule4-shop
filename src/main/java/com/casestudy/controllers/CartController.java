@@ -63,7 +63,7 @@ public class CartController {
         List<BillDetail> productInCarts = new ArrayList<>();
         List<Bill> billList = billService.findBillNotPayByUserId(currentUser.getId());
         for (Bill b : billList) {
-            List<BillDetail> billDetailList = billDetailService.findAllByBill(b);
+            List<BillDetail> billDetailList = billDetailService.findALlByBill(b);
             productInCarts.addAll(billDetailList);
         }
 
@@ -91,7 +91,7 @@ public class CartController {
                 if (bills.get(i).getShop().getId().equals(billDetail.getProduct().getShop().getId())) {
 
                     //get all product of this shop in cart and compare to new product customer  want to buy
-                    List<BillDetail> billDetailListInThisShop = billDetailService.findAllByBill(bills.get(i));
+                    List<BillDetail> billDetailListInThisShop = billDetailService.findALlByBill(bills.get(i));
                     for (int j = 0; j < billDetailListInThisShop.size(); j++) {
                         //check if the same product in cart
                         if (billDetailListInThisShop.get(j).getProduct().getId().equals(billDetail.getProduct().getId())) {
@@ -158,7 +158,7 @@ public class CartController {
             bill.setStatus(true);
             bill.setDate(new Date());
             bill.setTotalMoney(billDetailService.calculateMoneyByBillId(bill.getId()));
-            List<BillDetail> billDetailList = billDetailService.findAllByBill(bill);
+            List<BillDetail> billDetailList = billDetailService.findALlByBill(bill);
             Long soldNumber = 0L;
             for (BillDetail billDetail : billDetailList) {
                 Product product = billDetail.getProduct();
@@ -206,7 +206,7 @@ public class CartController {
         List<BillDetail> productInCarts = new ArrayList<>();
         List<Bill> billList = billService.findBillNotPayByUserId(currentUser.getId());
         for (Bill b : billList) {
-            List<BillDetail> billDetailList = billDetailService.findAllByBill(b);
+            List<BillDetail> billDetailList = billDetailService.findALlByBill(b);
             productInCarts.addAll(billDetailList);
         }
         return productInCarts;
