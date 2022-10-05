@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 @Controller
@@ -45,6 +44,7 @@ public class LoginUserController {
     public List<UserRole> showAll() {
         return userRoleService.findALl();
     }
+
     @GetMapping("")
     public ModelAndView showList(){
         ModelAndView modelAndView = new ModelAndView("home/login");
