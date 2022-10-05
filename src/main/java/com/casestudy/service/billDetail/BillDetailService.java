@@ -12,9 +12,16 @@ import java.util.List;
 
 @Service
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class BillDetailService implements IBillDetailService{
 =======
 public class BillDetailService implements IBillDetailService {
+>>>>>>> hiep
+=======
+public class BillDetailService implements IBillDetailService {
+=======
+public class BillDetailService implements IBillDetailService{
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
 >>>>>>> hiep
 
     @Autowired
@@ -43,17 +50,30 @@ public class BillDetailService implements IBillDetailService {
     @Override
     public void deleteById(Long id) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+>>>>>>> hiep
+=======
+
+=======
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
 >>>>>>> hiep
         billDetailRepository.deleteById(id);
     }
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public List<BillDetail> findAllByBill(Bill bill) {
 =======
     public List<BillDetail> findALlByBill(Bill bill) {
+>>>>>>> hiep
+=======
+    public List<BillDetail> findALlByBill(Bill bill) {
+=======
+    public List<BillDetail> findAllByBill(Bill bill) {
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
 >>>>>>> hiep
         return billDetailRepository.findAllByBill(bill);
     }
@@ -64,6 +84,12 @@ public class BillDetailService implements IBillDetailService {
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+>>>>>>> hiep
+=======
+
+=======
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
 >>>>>>> hiep
