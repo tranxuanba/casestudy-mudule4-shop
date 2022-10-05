@@ -5,12 +5,15 @@ import java.util.Date;
 
 @Entity
 public class Bill {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     private Shop shop;
+
+
 
     @ManyToOne
     private LoginUser loginUser;
