@@ -2,6 +2,7 @@ package com.casestudy.controllers;
 
 import com.casestudy.model.LoginUser;
 import com.casestudy.service.appuser.IAppUserService;
+import com.casestudy.service.statistical.StatisticalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
