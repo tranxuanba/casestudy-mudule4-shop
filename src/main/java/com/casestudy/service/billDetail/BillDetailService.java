@@ -11,7 +11,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+<<<<<<< HEAD
 public class BillDetailService implements IBillDetailService {
+=======
+public class BillDetailService implements IBillDetailService{
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
 
     @Autowired
     private BillDetailRepository billDetailRepository;
@@ -38,12 +42,19 @@ public class BillDetailService implements IBillDetailService {
 
     @Override
     public void deleteById(Long id) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
         billDetailRepository.deleteById(id);
     }
 
     @Override
+<<<<<<< HEAD
     public List<BillDetail> findALlByBill(Bill bill) {
+=======
+    public List<BillDetail> findAllByBill(Bill bill) {
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
         return billDetailRepository.findAllByBill(bill);
     }
 
@@ -52,4 +63,7 @@ public class BillDetailService implements IBillDetailService {
         return billDetailRepository.calculateMoneyByBillId(billId);
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 626900eee150dd74d2c04f35d27a8282433dbe59
