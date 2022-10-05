@@ -11,7 +11,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+<<<<<<< HEAD
 public class BillDetailService implements IBillDetailService{
+=======
+public class BillDetailService implements IBillDetailService {
+>>>>>>> hiep
 
     @Autowired
     private BillDetailRepository billDetailRepository;
@@ -38,11 +42,19 @@ public class BillDetailService implements IBillDetailService{
 
     @Override
     public void deleteById(Long id) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> hiep
         billDetailRepository.deleteById(id);
     }
 
     @Override
+<<<<<<< HEAD
     public List<BillDetail> findAllByBill(Bill bill) {
+=======
+    public List<BillDetail> findALlByBill(Bill bill) {
+>>>>>>> hiep
         return billDetailRepository.findAllByBill(bill);
     }
 
@@ -51,3 +63,7 @@ public class BillDetailService implements IBillDetailService{
         return billDetailRepository.calculateMoneyByBillId(billId);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> hiep
