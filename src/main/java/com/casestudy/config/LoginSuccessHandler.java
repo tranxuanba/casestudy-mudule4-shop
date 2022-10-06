@@ -46,12 +46,12 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
             roles.add(a.getAuthority());
         }
         if (isAdmin(roles)) {
-            url = "/dashboard";
+            url = "/admin";
         } else if (isUser(roles)) {
             url = "/users";
 
         } else if (isShop(roles)) {
-            url = "/dashboard";
+            url = "/shop";
 
         } else {
             url = "/khongcoquyen";

@@ -17,8 +17,13 @@ public class DashboardController {
         return appUserService.getCurrentUser();
     }
 
-    @GetMapping("/dashboard")
+    @GetMapping("/shop")
     public String home() {
-        return "/shop/home";
+        return "/shop/product/list";
+    }
+
+    @GetMapping("/admin")
+    public String showAdmin() {
+        return "/admin/home";
     }
 }
